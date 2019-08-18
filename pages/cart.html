@@ -1,0 +1,61 @@
+<div ng-controller="CartController as cart">
+    <section class="page-section" id="carts">
+        <div class="container">
+            <div class="row" ng-if="cart.qty <= 0">
+                <div class="col-lg-12">
+                    <div class="card p-4">
+                        <div class="card-body text-center">
+                            <span>Anda belum menambah barang ke keranjang.</span><br>
+                            <a class="btn btn-primary text-white mt-4" href="#/">Belanja sekarang</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" ng-if="cart.qty > 0">
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-md-12" ng-repeat="item in cart.items">
+                            <div class="card pt-3">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <img src="{{ item.gambar }}" class="img-thumbnail img-fluid"
+                                                onerror="this.src='https://source.unsplash.com/o0Qqw21-0NI/800x800'">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h5 class="card-title">{{ item.judul }}</h5>
+                                            <p><small>{{ item.author }}</small></p>
+                                            <p class="text-success">{{ item.harga }}</p>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="qtyAdder"><small>Jumlah</small></label>
+                                            <input type="number" class="form-control align-middle" name="qtyAdder"
+                                                id="qtyAdder" value="1">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card p-3">
+                        <div class="card-title">
+                            <p><strong>Ringkasan Belanja</strong></p>
+                            <hr>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="row">
+                                <div class="col-sm-8"><span>Total Harga: </span></div>
+                                <div class="col-sm-4"><span><strong>Rp. 00.000</strong></span></div>
+                            </div>
+                            <hr>
+                            <button type="button" class="btn btn-primary btn-block"
+                                ng-click="main.checkOut">Checkout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

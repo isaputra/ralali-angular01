@@ -1,0 +1,20 @@
+@import "variable";
+
+.items {
+
+    margin-bottom: 20px;
+
+    img {
+        height: 500px;
+    }
+
+    .item__info {
+        text-decoration: none;
+        color: $color-dark;
+
+        &:hover {
+            color: $color-primary;
+        }
+    }
+
+}

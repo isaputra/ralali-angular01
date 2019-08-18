@@ -1,0 +1,14 @@
+.page-section {
+  padding: 8rem 0 4rem;
+}
+.page-section .section-head {
+  margin-bottom: 4rem;
+}
+.page-section table, .page-section .card {
+  -webkit-box-shadow: 0px 5px 14px 0px #dddddd;
+  -moz-box-shadow: 0px 5px 14px 0px #dddddd;
+  box-shadow: 0px 5px 14px 0px #dddddd;
+  margin-bottom: 2rem;
+}
+
+/*# sourceMappingURL=page-section.css.map */

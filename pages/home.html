@@ -1,0 +1,57 @@
+<section class="page-section bg-light border-bottom" id="books">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 section-head">
+                <h2 class="section-heading text-uppercase">DAFTAR BUKU</h2>
+                <h4 class="section-subheading text-muted">Beli dong gan.</h4>
+                <book-item></book-item>
+            </div>
+            <div class="col-xs-12 col-md-3" ng-repeat="book in books">
+                <div class="card items">
+                    <img src="{{ book.gambar }}" class="card-img-top img-square"
+                        onerror="this.src='https://via.placeholder.com/300'">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            {{ (book.judul).length >= 15 ? book.judul.substring(0, 15).concat('...') : book.judul }}
+                        </h5>
+                        <p><small>{{ book.author }}</small></p>
+                        <p class="text-success">{{ book.harga | currency }}</p>
+                        <!-- <p class="card-text">{{ (book.description).length >= 75 ? book.description.substring(0, 75).concat('...') : book.description }}</p> -->
+                        <button type="button" class="btn btn-success btn-block" ng-click="addToCart(book)">Beli</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="page-section" id="customers">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 section-head">
+                <h2 class="section-heading text-uppercase">DAFTAR PELANGGAN</h2>
+            </div>
+            <div class="col-lg-12">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Website</th>
+                            <th>Company</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="u in users">
+                            <td>{{u.name}}</td>
+                            <td>{{u.username}}</td>
+                            <td>{{u.email}}</td>
+                            <td>{{u.website}}</td>
+                            <td>{{u.company.name}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
